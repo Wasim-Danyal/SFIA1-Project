@@ -1,4 +1,11 @@
 {% extends "layout.html" %}
 {% block body_content %}
-    <p1> Homepage </p1>
+    {% if current_user.is_authenticated %}
+    <p1> Welcome back to Forex Rates! </p1>
+    <a href="{{ url_for('convert') }}">Click here to check out current rates</a>
+    <a href="{{ url_for('logout') }}">Click here to logout</a>
+    {% else %} 
+    <p1> Welcome back to Forex Rates </p1>
+    <a href="{{ url_for('register') }}">Click here to register</a>
+    {% endif %}
 {% endblock %}
