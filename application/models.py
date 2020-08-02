@@ -8,7 +8,6 @@ class Users(db.Model, UserMixin):
     last_name = db.Column(db.String(30), nullable=False)
     email = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(250), nullable=False)
-    post = db.relationship('Posts', backref='author', lazy=True)
 
 @login_manager.user_loader
 def load_user(id):

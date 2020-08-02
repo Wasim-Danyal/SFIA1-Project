@@ -2,7 +2,9 @@
 {% block body_content %}
     {% if current_user.is_authenticated %}
     <p1> Welcome back to Forex Rates! </p1>
+    <br></br>
     <a href="{{ url_for('convert') }}">Click here to check out current rates</a>
+    <br></br>
     <a href="{{ url_for('logout') }}">Click here to logout</a>
     {% else %} 
     <p1> Welcome back to Forex Rates </p1>

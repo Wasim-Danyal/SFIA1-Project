@@ -30,7 +30,7 @@ def register():
 		db.session.add(user)
 		db.session.commit()
 
-		return redirect(url_for('post'))
+		return redirect(url_for('login'))
 
 	return render_template('register.html', title='Register', form=form)
 
@@ -52,9 +52,9 @@ def login():
 
 @app.route("/logout")
 def logout():
-logout_user()
-return redirect(url_for('home'))
+    logout_user()
+    return redirect(url_for('home'))
 
 @app.route('/about')
 def about():
- return render_template('about.html', title='About')
+    return render_template('about.html', title='About')
