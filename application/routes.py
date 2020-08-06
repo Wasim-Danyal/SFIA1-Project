@@ -3,7 +3,7 @@ from application import app, db, bcrypt
 from flask_login import login_user, current_user, logout_user, login_required
 from application.models import Users
 from application.forms import RegistrationForm, LoginForm, UpdateAccountForm, NewRate 
-
+from application.tables import Results
 @app.route('/')
 @app.route('/home')
 def home():
@@ -11,27 +11,21 @@ def home():
 
 @app.route('/convert')
 def convert():
-		results = []
-		if not results:
-			flash('No results found!')
-			return redirect('/')
-		else:
-			table = Results(NewRate)
-			table.border = True
-			return render_template('convert.html', table=table)
+		ratesData = Rates.query.all()
+		return render_template('conver.html', title='Forex Rates', rates=ratesData )
 
 @app.route('/newrate', methods=['GET', 'POST'])
 def newrate():
 	form = NewRate()
 	if form.validate_on_submit():
-		rateData = Rates(
+		ratesData = Rates(
 			base_currency=form.base_currency.data,
 			new_currency=form.new_currency.data,
 			bid_rate=form.bid_rate.data,
 			ask_rate=form.ask_rate.data
 		)
 			
-		db.session.add(rateData)
+		db.session.add(ratesData)
 		db.session.commit()
 		
 		return redirect(url_for('convert'))

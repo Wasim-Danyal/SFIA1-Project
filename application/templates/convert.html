@@ -1,5 +1,15 @@
 {% extends "layout.html" %}
+
 {% block body_content %}
-    <title> Current Forex rates </title>
-    {{ table }}
+<p>this is a init test</p>
+{% for newrate in rates %}
+	<div>
+		<h3>{{ post.title }}</h3>
+		<p><b> - testingone:</b>{{ post.base_currency}}</p>
+        <p><b> - testingtwo:</b>{{ post.new_currency}}</p>
+        <p><b> - testingthree:</b>{{ post.ask_rate}}</p>
+        <p><b> - testingfour:</b>{{ post.bid_rate}}</p>
+	</div>
+{% endfor %}
+	
 {% endblock %}
