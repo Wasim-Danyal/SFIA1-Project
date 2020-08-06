@@ -44,7 +44,6 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('Sorry, that E-Mail is already in use, please try another')
 
-
 class LoginForm(FlaskForm):
 	email = StringField('Email',
 		validators=[
@@ -88,7 +87,6 @@ class NewRate(FlaskForm):
     )
 
     submit = SubmitField('Add')
-
 
 class UpdateAccountForm(FlaskForm):
     first_name = StringField('First Name',
