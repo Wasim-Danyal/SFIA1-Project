@@ -73,13 +73,13 @@ class NewRate(FlaskForm):
         Length(min=3, max=3)
         ]
     )
-    bid_rate = IntegerField('Bid',
+    bid_rate = StringField('Bid',
     validators=[
         DataRequired(),
         Length(min=1, max=10)
         ]
     )
-    ask_rate = IntegerField('Ask',
+    ask_rate = StringField('Ask',
     validators=[
         DataRequired(),
         Length(min=1, max=10)
