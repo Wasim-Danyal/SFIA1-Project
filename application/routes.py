@@ -112,7 +112,7 @@ def account_delete():
 
 @app.route("/delete/<id>", methods=["GET", "POST"])
 @login_required
-def delete_rate():
+def delete_rate(id):
 	rate = Rates.query.filter_by(id=id).first()
 	for newrate in rates:
 		db.session.delete(rate)
