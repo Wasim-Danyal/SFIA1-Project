@@ -20,17 +20,19 @@ def convert():
 def newrate():
 	form = NewRate()
 	if form.validate_on_submit():
-		rate = Rates(
+		rateData = Rates(
 			base_currency=form.base_currency.data,
 			new_currency=form.new_currency.data,
 			bid_rate=form.bid_rate.data,
 			ask_rate=form.ask_rate.data
-			)
+		)
 			
-		db.session.add(rate)
+		db.session.add(rateData)
 		db.session.commit()
-
+		
 		return redirect(url_for('convert'))
+	else:
+		print(form.errors)
 	return render_template('newrate.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
