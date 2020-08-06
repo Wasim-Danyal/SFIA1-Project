@@ -17,7 +17,7 @@ def convert():
 		return render_template('convert.html', table=table)
 
 @app.route('/newrate', methods=['GET', 'POST'])
-def new_rate():
+def newrate():
 	form = NewRate()
 	if form.validate_on_submit():
 		rate = Rates(
