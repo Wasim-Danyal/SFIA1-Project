@@ -21,9 +21,9 @@ def new_rate():
 	form = NewRate()
 	if form.validate_on_submit():
 		rate = Rates(
-			base_currency=form.base_currency.data
-			new_currency=form.new_currency.data
-			bid_rate=form.bid_rate.data
+			base_currency=form.base_currency.data,
+			new_currency=form.new_currency.data,
+			bid_rate=form.bid_rate.data,
 			ask_rate=form.ask_rate.data
 			)
 			
