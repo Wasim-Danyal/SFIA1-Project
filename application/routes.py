@@ -22,9 +22,9 @@ def new_rate():
 	if form.validate_on_submit():
 		rate = Rates(
 			base_currency=form.base_currency.data
-			base_currency=form.new_currency.data
-			base_currency=form.bid_rate.data
-			base_currency=form.ask_rate.data
+			new_currency=form.new_currency.data
+			bid_rate=form.bid_rate.data
+			ask_rate=form.ask_rate.data
 			)
 			
 		db.session.add(rate)
