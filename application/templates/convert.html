@@ -4,10 +4,12 @@
 <p>Current Forex rates are listed below:</p>
 {% for newrate in rates %}
 	<div>
+        <br></br>
 		<p><b> - testingone:</b>{{ newrate.base_currency}}</p>
         <p><b> - testingtwo:</b>{{ newrate.new_currency}}</p>
         <p><b> - testingthree:</b>{{ newrate.ask_rate}}</p>
         <p><b> - testingfour:</b>{{ newrate.bid_rate}}</p>
+        <br></br>
 	</div>
 {% endfor %}
 	
