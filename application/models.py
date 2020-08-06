@@ -11,8 +11,8 @@ class Users(db.Model, UserMixin):
 
 class Rates(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    base_currency = db.column(db.string(5), nullable=False) 
-    new_currency = db.column(db.string(5), nullable=False) 
+    base_currency = db.column(db.String(5), nullable=False) 
+    new_currency = db.column(db.String(5), nullable=False) 
     bid_rate = db.column(db.Integer(10), nullable=False)
     ask_rate = db.column(db.Integer(10), nullable=False)
 
