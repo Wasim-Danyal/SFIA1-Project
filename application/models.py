@@ -13,8 +13,8 @@ class Rates(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	base_currency = db.Column(db.String(5), nullable=False) 
 	new_currency = db.Column(db.String(5), nullable=False) 
-	bid_rate = db.Column(db.Integer, nullable=False)
-	ask_rate = db.Column(db.Integer, nullable=False)
+	bid_rate = db.Column(db.Integer(5), nullable=False)
+	ask_rate = db.Column(db.Integer(5), nullable=False)
 
 
 @login_manager.user_loader
