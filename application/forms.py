@@ -89,6 +89,7 @@ class NewRate(FlaskForm):
     submit = SubmitField('Add')
 
 class UpdateAccountForm(FlaskForm):
+    
     first_name = StringField('First Name',
         validators=[
             DataRequired(),
@@ -111,3 +112,32 @@ class UpdateAccountForm(FlaskForm):
             user = Users.query.filter_by(email=email.data).first()
             if user:
                 raise ValidationError('Email already in use')
+
+class UpdateRatesForm(FlaskForm):
+
+    base_currency = StringField('Base Currency',
+    validators=[
+        DataRequired(),
+        Length(min=3, max=3)
+        ]
+    )
+    new_currency = StringField('Pair Currency',
+    validators=[
+        DataRequired(),
+        Length(min=3, max=3)
+        ]
+    )
+    bid_rate = StringField('Bid',
+    validators=[
+        DataRequired(),
+        Length(min=1, max=10)
+        ]
+    )
+    ask_rate = StringField('Ask',
+    validators=[
+        DataRequired(),
+        Length(min=1, max=10)
+        ]
+    )
+
+    submit = SubmitField('Update')

@@ -118,3 +118,11 @@ def delete_rate(id):
 		db.session.delete(rate)
 		db.session.commit()
 	return redirect(url_for('convert'))
+
+@app.route("/update/<id>", methods=["GET", "POST"])
+@login_required
+def update_rate(id):
+	form = UpdateRatesForm()
+	rate = Rates.query.filter_by(id=id).all()
+	if form.validate_on_submit():
+		
