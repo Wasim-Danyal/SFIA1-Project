@@ -32,7 +32,7 @@ def newrate():
 		return redirect(url_for('convert'))
 	else:
 		print(form.errors)
-	return render_template('newrate.html' title='Forex' form=form)
+	return render_template('newrate.html', title='Forex', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
