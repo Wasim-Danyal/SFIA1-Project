@@ -3,7 +3,6 @@
 {% block body_content %}
 <p>Current Forex rates are listed below:</p>
 {% for newrate in rates %}
-{{ form.hidden_tag() }}
 	<div>
 		<p><b> - testingone:</b>{{ newrate.base_currency}}</p>
         <p><b> - testingtwo:</b>{{ newrate.new_currency}}</p>
