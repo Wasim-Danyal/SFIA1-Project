@@ -108,3 +108,13 @@ def account_delete():
 		db.session.delete(account)
 		db.session.commit()
 		return redirect(url_for('register'))
+
+
+@app.route("/delete/<id>", methods=["GET", "POST"])
+@login_required
+def delete_rate():
+	rate = Rates.query.filter_by(id=id).first()
+	for newrate in rates:
+		db.session.delete(rate)
+		db.session.commit()
+	return redirect(url_for('convert'))

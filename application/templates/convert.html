@@ -4,11 +4,12 @@
 <p>Current Forex rates are listed below:</p>
 {% for newrate in rates %}
 	<div>
-		<p><b> - testingone:</b>{{ newrate.base_currency}}</p>
-        <p><b> - testingtwo:</b>{{ newrate.new_currency}}</p>
-        <p><b> - testingthree:</b>{{ newrate.ask_rate}}</p>
-        <p><b> - testingfour:</b>{{ newrate.bid_rate}}</p>
-        <button type="submit">Delete</button>
+		<p><b> - Base:</b>{{ newrate.base_currency}}</p>
+        <p><b> - New:</b>{{ newrate.new_currency}}</p>
+        <p><b> - Ask:</b>{{ newrate.ask_rate}}</p>
+        <p><b> - Bid:</b>{{ newrate.bid_rate}}</p>
+        <form action="{{ url_for('convert_manage') }}">
+            <button type="submit">Manage this rate</button>
         <hr></hr>
 	</div>
 {% endfor %}
