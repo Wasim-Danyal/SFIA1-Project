@@ -4,6 +4,7 @@
 <h2>Add a new rate here:</h2>
 {% from "_formhelpers.html" import render_field %}
 <form method="post">
+    {{ form.hidden_tag() }}
     <dl>
         {{ render_field(form.base_currency) }}
         {{ render_field(form.new_currency) }}
