@@ -114,7 +114,7 @@ def account_delete():
 @login_required
 def delete_rate(id):
 	rate = Rates.query.filter_by(id=id).all()
-	for rate in Rates:
+	for rate in rate:
 		db.session.delete(rate)
 		db.session.commit()
 	return redirect(url_for('convert'))
