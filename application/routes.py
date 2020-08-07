@@ -134,6 +134,6 @@ def update_rate(id):
 	elif request.method == 'GET':
 		form.base_currency.data=rate.base_currency
 		form.new_currency.data=rate.new_currency
-		form.bid_rate.data=bid.bid_rate
+		form.bid_rate.data=rate.bid_rate
 		form.ask_rate.data=rate.ask_rate
 	return render_template('update.html', title='Manage Rate', form=form, rate=rate)
