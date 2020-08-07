@@ -16,7 +16,6 @@ class Rates(db.Model):
 	bid_rate = db.Column(db.String(5), nullable=False)
 	ask_rate = db.Column(db.String(5), nullable=False)
 
-
 @login_manager.user_loader
 def load_user(id):
 	return Users.query.get(int(id))

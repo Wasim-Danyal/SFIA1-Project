@@ -125,4 +125,15 @@ def update_rate(id):
 	form = UpdateRatesForm()
 	rate = Rates.query.filter_by(id=id).all()
 	if form.validate_on_submit():
-		
+		Rates.base_currency=form.base_currency.data 
+		Rates.new_currency=form.new_currency.data
+		Rates.bid_rate=form.bid_rate.data	
+		Rates.ask_rate=form.ask_rate.data
+		db.session(commit)
+		return redirect(url_for('convert'))
+	elif request.method == 'GET':
+		Rates.base_currency=form.base_currency.data 
+		Rates.new_currency=form.new_currency.data
+		Rates.bid_rate=form.bid_rate.data	
+		Rates.ask_rate=form.ask_rate.data
+	return redirect(url_for('update.html', title='Manage Rates', form=form, rate=rate))
