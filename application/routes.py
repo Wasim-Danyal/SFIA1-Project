@@ -10,10 +10,11 @@ from application.forms import RegistrationForm, LoginForm, UpdateAccountForm, Ne
 def home():
  return render_template('home.html', title='Home')
 
-@app.route('/convert')
-def convert():
+@app.route('/convert/<id>', methods=['GET'])
+def convert(id):
 		ratesData = Rates.query.all()
-		return render_template('convert.html', title='Forex Rates', rates=ratesData)
+		rate = Rates.query.filter_by(id=id).all()
+		return render_template('convert.html', title='Forex Rates', rates=ratesData, rate=rate)
 
 @app.route('/newrate', methods=['GET', 'POST'])
 def newrate():
