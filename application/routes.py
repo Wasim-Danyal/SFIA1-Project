@@ -13,7 +13,7 @@ def home():
 @app.route('/convert')
 def convert():
 		ratesData = Rates.query.all()
-		return render_template('convert.html', title='Forex Rates', rates=ratesData )
+		return render_template('convert.html', title='Forex Rates', rates=ratesData)
 
 @app.route('/newrate', methods=['GET', 'POST'])
 def newrate():
@@ -32,7 +32,7 @@ def newrate():
 		return redirect(url_for('convert'))
 	else:
 		print(form.errors)
-	return render_template('newrate.html', title='Forex', form=form)
+	return render_template('newrate.html', title='New Rate', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

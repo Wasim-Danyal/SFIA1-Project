@@ -5,10 +5,13 @@
 {% for newrate in rates %}
 	<div>
 		<p><b> - Base:</b>{{ newrate.base_currency}}</p>
-        <p><b> - New:</b>{{ newrate.new_currency}}</p>
-        <p><b> - Bid:</b>{{ newrate.bid_rate}}</p>
-        <p><b> - Ask:</b>{{ newrate.ask_rate}}</p>
-        <hr></hr>
+		<p><b> - New:</b>{{ newrate.new_currency}}</p>
+		<p><b> - Bid:</b>{{ newrate.bid_rate}}</p>
+		<p><b> - Ask:</b>{{ newrate.ask_rate}}</p>
+		<a href="{{ url_for('update_rate', id=newrate.id) }}">Manage</a>
+		<a href="{{ url_for('delete_rate', id=newrate.id) }}">Delete</a>
+	</div>
+		<hr></hr>
 	</div>
 {% endfor %}
 	
