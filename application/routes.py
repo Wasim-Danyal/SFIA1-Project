@@ -123,7 +123,7 @@ def delete_rate(id):
 @login_required
 def update_rate(id):
 	form = UpdateRatesForm()
-	rate = Rates.query.filter_by(id=id).all()
+	rate = Rates.query.filter_by(id=id).first()
 	if form.validate_on_submit():
 		rate.base_currency=form.base_currency.data
 		db.session(commit)
