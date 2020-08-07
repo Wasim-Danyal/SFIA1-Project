@@ -10,7 +10,7 @@ from application.forms import RegistrationForm, LoginForm, UpdateAccountForm, Ne
 def home():
  return render_template('home.html', title='Home')
 
-@app.route('/convert')
+@app.route('/convert', methods=['GET'])
 def convert():
 		ratesData = Rates.query.all()
 		rate = Rates.query.filter_by(id=id).all()
