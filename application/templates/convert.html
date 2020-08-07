@@ -8,10 +8,8 @@
 		<p><b> - New:</b>{{ newrate.new_currency}}</p>
 		<p><b> - Bid:</b>{{ newrate.bid_rate}}</p>
 		<p><b> - Ask:</b>{{ newrate.ask_rate}}</p>
-		<form action="/update/{{ rates.id }}">
-			<input type="submit" value="Manage" />
-		</form>
-</div>
+		<a href="{{ url_for('update_rate', id=rates.id) }}">Manage</a>
+	</div>
 		<hr></hr>
 	</div>
 {% endfor %}
