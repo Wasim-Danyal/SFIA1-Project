@@ -136,4 +136,4 @@ def update_rate(id):
 		Rates.new_currency=form.new_currency.data
 		Rates.bid_rate=form.bid_rate.data	
 		Rates.ask_rate=form.ask_rate.data
-	return redirect(url_for('update.html', title='Manage Rates', form=form, rate=rate))
+	return render_template('update.html', title='Manage Rate', form=form, rate=rate)
