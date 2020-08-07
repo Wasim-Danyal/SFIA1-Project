@@ -42,7 +42,7 @@
             {{ form.submit }}
         </div>
     </form>
-<form action="{{ url_for('/delete/{{ rate.id }}') }}">
+    <form action="/delete/{{ rate.id }}">
     <button type="submit">Delete Rate</button>
 </form>
 </div>
