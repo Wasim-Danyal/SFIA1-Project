@@ -15,29 +15,6 @@
             {% endif %}
         </div>
         <br>
-        <div class="form-group">
-            {{ form.new_currency.label }}
-            {{ form.new_currency }}
-            {% if form.new_currency.errors %}
-            <div class="error">
-                {% for error in form.new_currency.errors %}
-                    <span>{{ error }}</span>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </div>
-        <div class='form_group'>
-            {{ form.ask_rate.label }}
-            {{ form.ask_rate }}
-            {% if form.ask_rate.errors %}
-                <div class='error'>
-                    {% for error in form.ask_rate.errors %}
-                        <span>{{ error }}</span>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-        <br>
         <div>
             {{ form.submit }}
         </div>
