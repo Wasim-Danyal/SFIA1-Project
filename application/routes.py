@@ -129,7 +129,7 @@ def update_rate(id):
 		rate.new_currency=form.new_currency.data
 		rate.bid_rate=form.bid_rate.data
 		rate.ask_rate=form.ask_rate.data
-		db.session(commit)
+		db.session.commit()
 		return redirect(url_for('convert'))
 	elif request.method == 'GET':
 		form.base_currency.data=rate.base_currency
