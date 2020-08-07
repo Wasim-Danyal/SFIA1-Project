@@ -4,7 +4,6 @@
 <p>Current Forex rates are listed below:</p>
 {% for newrate in rates %}
 	<div>
-		<p><b> - Identifier:</b>{{ newrate.id}}</p>
 		<p><b> - Base:</b>{{ newrate.base_currency}}</p>
 		<p><b> - New:</b>{{ newrate.new_currency}}</p>
 		<p><b> - Bid:</b>{{ newrate.bid_rate}}</p>
