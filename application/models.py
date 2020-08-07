@@ -11,10 +11,10 @@ class Users(db.Model, UserMixin):
 
 class Rates(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	base_currency = db.Column(db.String(5), nullable=False) 
-	new_currency = db.Column(db.String(5), nullable=False) 
-	bid_rate = db.Column(db.String(5), nullable=False)
-	ask_rate = db.Column(db.String(5), nullable=False)
+	base_currency = db.Column(db.String(3), nullable=False) 
+	new_currency = db.Column(db.String(3), nullable=False) 
+	bid_rate = db.Column(db.String(10), nullable=False)
+	ask_rate = db.Column(db.String(10), nullable=False)
 
 @login_manager.user_loader
 def load_user(id):
