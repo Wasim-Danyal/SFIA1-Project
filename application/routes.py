@@ -13,7 +13,7 @@ def home():
 @app.route('/convert')
 def convert():
 		ratesData = Rates.query.all()
-		rate = Rates.query.filter_by(id=id).first()
+		rate = Rates.query.filter_by(id=id).all()
 		return render_template('convert.html', title='Forex Rates', rates=ratesData, rate=rate)
 
 @app.route('/newrate', methods=['GET', 'POST'])
