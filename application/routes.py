@@ -129,5 +129,5 @@ def update_rate(id):
 		db.session(commit)
 		return redirect(url_for('convert'))
 	elif request.method == 'GET':
-		form.base_currency=rate.base_currency
+		form.base_currency.data=rate.base_currency
 	return render_template('update.html', title='Manage Rate', form=form, rate=rate)
