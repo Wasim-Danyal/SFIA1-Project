@@ -108,7 +108,7 @@ class TestUserFunctionality(TestBase):
 				),
 				follow_redirects=True
 			)
-			self.assertEqual(current_user.username, "admin")
+			self.assertEqual(current_user.email, "joebloggs@gmail.com")
 
 	def test_logout(self):
 		with self.client:
