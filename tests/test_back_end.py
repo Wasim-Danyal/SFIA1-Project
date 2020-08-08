@@ -145,7 +145,7 @@ class TestRates(TestBase):
 				),
 				follow_redirects=True
 			)
-self.assertIn(b'4.567', response.data)
+			self.assertIn(b'4.567', response.data)
 	
 class TestAccount(TestBase):
 	def test_delete_account(self):
