@@ -86,12 +86,12 @@ class TestUserFunctionality(TestBase):
 			response = self.client.post(
 				'/login',
 				data=dict(
-					email="joebloggs@gmail.com",
-					password="password123"
+					email="admin@admin.com",
+					password="admin2016"
 				),
 				follow_redirects=True
 			)
-			self.assertEqual(current_user.email, "joebloggs@gmail.com")
+			self.assertEqual(current_user.email, "admin@admin.com")
 
 	def test_logout(self):
 		with self.client:
