@@ -2,7 +2,7 @@ import unittest
 
 from flask import url_for
 from flask_testing import TestCase
-
+from flask_login import login_user, current_user, logout_user, login_required
 from application import app, db, bcrypt
 from application.models import Users, Rates
 from os import getenv
