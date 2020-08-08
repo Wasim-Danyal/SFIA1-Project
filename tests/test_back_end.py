@@ -64,15 +64,19 @@ class TestViews(TestBase):
 		response = self.client.get(url_for('about'))
 		self.assertEqual(response.status_code, 200)
 
-	def test_convert_view(self):
 
-		response = self.client.get(url_for('convert'))
-		self.assertEqual(response.status_code, 200)
+class TestNewRate(TestBase):
 
-	def test_login_view(self):
-		response = self.client.get(url_for('login'))
-		self.assertEqual(response.status_code, 200)
-
-	def test_register_view(self):
-		response = self.client.get(url_for('register'))
-		self.assertEqual(response.status_code, 200)
+    def test_add_new_rate(self):
+        with self.client:
+			response = self.client.post(
+				'/newrate',
+				data=dict(
+					base_Currency="EUR",
+					pair_Currency="GBP",
+					bid_rate="1.234",
+					ask_rate="4.567"
+				),
+				follow_redirects=True
+			)
+			self.assertIn(b'EUR', response.data)
