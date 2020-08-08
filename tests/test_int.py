@@ -29,7 +29,7 @@ class TestBase(LiveServerTestCase):
         chrome_options = Options()
         chrome_options.binary_location = "/usr/bin/chromium-browser"
         chrome_options.add_argument("--headless")
-        self.driver = webdriver.Chrome(executable_path="<PATH TO chromedriver executable>", chrome_options=chrome_options)
+        self.driver = webdriver.Chrome(executable_path="/home/wasim_danyal1/chromedriver", chrome_options=chrome_options)
         self.driver.get("http://localhost:5000")
         db.session.commit()
         db.drop_all()
@@ -54,20 +54,20 @@ class TestRegistration(TestBase):
         """
 
         # Click register menu link
-        self.driver.find_element_by_xpath("<xpath for Register button in nav bar>").click()
+        self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[3]").click()
         time.sleep(1)
 
         # Fill in registration form
-        self.driver.find_element_by_xpath('<xpath for registration email>').send_keys(test_admin_email)
-        self.driver.find_element_by_xpath('<xpath for registration first name>').send_keys(
+        self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
+        self.driver.find_element_by_xpath('//*[@id="first_name"]').send_keys(
             test_admin_first_name)
-        self.driver.find_element_by_xpath('<xpath for registration last name>').send_keys(
+        self.driver.find_element_by_xpath('//*[@id="last_name"]').send_keys(
             test_admin_last_name)
-        self.driver.find_element_by_xpath('<xpath for registration password>').send_keys(
+        self.driver.find_element_by_xpath('//*[@id="password"]').send_keys(
             test_admin_password)
-        self.driver.find_element_by_xpath('<xpath for registration check password>').send_keys(
+        self.driver.find_element_by_xpath('//*[@id="confirm_password"]').send_keys(
             test_admin_password)
-        self.driver.find_element_by_xpath('<xpath for register button>').click()
+        self.driver.find_element_by_xpath('//*[@id="submit"]').click()
         time.sleep(1)
 
         # Assert that browser redirects to login page
