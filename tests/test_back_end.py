@@ -121,7 +121,12 @@ class TestUserFunctionality(TestBase):
 			)
 			self.assertEqual(current_user.email, "admin@admin.com")
 
-	def test_logout(self):
+	def test_deleteuser(self):
+			self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
+			response = self.client.post(url_for('account_delete'), follow_redirects=True)
+			self.assertIn(b'Login', response.data)
+
+	def test_logoutuser(self):
 		with self.client:
 			response = self.client.get(
 				'/logout',
@@ -135,8 +140,3 @@ class TestRates(TestBase):
 			response = self.client.post('/newrate', data=dict(base_Currency="EUR",pair_Currency="GBP", bid_rate="1.234", ask_rate="4.567"), follow_redirects=True)
 			self.assertIn(b'1.234', response.data)
 
-class TestAccountManage(TestBase):
-	def test_delete_account(self):
-			self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
-			response = self.client.post(url_for('account_delete'), follow_redirects=True)
-			self.assertIn(b'Login', response.data)
