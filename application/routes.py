@@ -11,11 +11,13 @@ def home():
  return render_template('home.html', title='Home')
 
 @app.route('/convert')
+@login_required
 def convert():
 		ratesData = Rates.query.all()
 		return render_template('convert.html', title='Forex Rates', rates=ratesData)
 
 @app.route('/newrate', methods=['GET', 'POST'])
+@login_required
 def newrate():
 	form = NewRate()
 	if form.validate_on_submit():
