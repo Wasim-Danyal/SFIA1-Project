@@ -58,10 +58,3 @@ class TestViews(TestBase):
 		"""
 		response = self.client.get(url_for('home'))
 		self.assertEqual(response.status_code, 200)
-
-	def test_about_view(self):
-		"""
-		Test that the About page is accessible without login
-		"""
-		response = self.client.get(url_for('about'))
-		self.assertEqual(response.status_code, 200)
