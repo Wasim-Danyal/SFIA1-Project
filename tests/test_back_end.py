@@ -79,6 +79,8 @@ class TestNewRate(TestBase):
 				),
 				follow_redirects=True
 			)
+			ratecheck = self.client.get(url_for('convert'))
+			self.assertIn(b'convert', response.data)
 			self.assertIn(b'EUR', response.data)
 
 class TestUserFunctionality(TestBase):
