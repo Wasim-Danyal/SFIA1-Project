@@ -49,12 +49,30 @@ class TestBase(TestCase):
 
 		db.session.remove()
 		db.drop_all()
+	
 
 class TestViews(TestBase):
+# testing to see if code 200 is returned upon access to url
 
 	def test_homepage_view(self):
-		"""
-		Test that homepage is accessible without login
-		"""
 		response = self.client.get(url_for('home'))
+		self.assertEqual(response.status_code, 200)
+	
+
+	def test_about_view(self):
+
+		response = self.client.get(url_for('about'))
+		self.assertEqual(response.status_code, 200)
+
+	def test_convert_view(self):
+
+		response = self.client.get(url_for('convert'))
+		self.assertEqual(response.status_code, 200)
+
+	def test_login_view(self):
+		response = self.client.get(url_for('login'))
+		self.assertEqual(response.status_code, 200)
+
+	def test_register_view(self):
+		response = self.client.get(url_for('register'))
 		self.assertEqual(response.status_code, 200)
