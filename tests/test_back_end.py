@@ -146,3 +146,14 @@ class TestRates(TestBase):
 				follow_redirects=True
 			)
 			self.assertIn(b'4.567', response.data)
+	
+	def test_update_rate(self):
+		with self.client:
+			response = self.client.post(
+				'/update/1',
+				data=dict(
+					ask_rate="3.456"
+				),
+				follow_redirects=True
+			)
+			self.assertIn(b'3.456', response.date)
