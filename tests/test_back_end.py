@@ -138,6 +138,5 @@ class TestRates(TestBase):
 class TestAccountManage(TestBase):
 	def test_delete_account(self):
 			self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
-			response = self.client.post(url_for('account/delete'),
-			self.assertIn(b'Login, response.data')
-		
+			response = self.client.post(url_for('account/delete'), follow_redirects=True)
+			self.assertIn(b'Login', response.data)
