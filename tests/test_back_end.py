@@ -52,7 +52,7 @@ class TestBase(TestCase):
 	
 
 class TestViews(TestBase):
-# testing to see if code 200 is returned upon access to url
+	# testing to see if code 200 is returned upon access to url
 
 	def test_homepage_view(self):
 		response = self.client.get(url_for('home'))
@@ -80,3 +80,33 @@ class TestNewRate(TestBase):
 				follow_redirects=True
 			)
 			self.assertIn(b'EUR', response.data)
+
+class TestUserFunctionality(TestBase):
+
+	def test_registeruser(self):
+		with self.client:
+			response = self.client.post(
+				'/register',
+				data=dict(
+					first_name="Joe",
+					last_name="Bloggs",
+					email="joebloggs@gmail.com",
+					password="password123",
+					confirm_password="password123"
+				),
+				follow_redirects=True
+			)
+			self.assertTrue(response.status_code, 200)
+
+	def test_loginuser(self):
+		with self.client:
+			response = self.client.post(
+				'/login',
+				data=dict(
+					email="joebloggs@gmail.com",
+					password="password123"
+				),
+				follow_redirects=True
+			)
+			self.assertEqual(current_user.username, "admin")
+
