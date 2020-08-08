@@ -73,7 +73,7 @@ class TestNewRate(TestBase):
 				'/newrate',
 				data=dict(
 					base_Currency="EUR",
-					pair_Currency="GBP",
+					new_Currency="GBP",
 					bid_rate="1.234",
 					ask_rate="4.567"
 				),
@@ -110,3 +110,11 @@ class TestUserFunctionality(TestBase):
 			)
 			self.assertEqual(current_user.username, "admin")
 
+	def test_logout(self):
+		with self.client:
+			response = self.client.get(
+				'/logout',
+				follow_redirects=True
+			)
+			self.assertFalse(current_user.is_authenticated)
+		
