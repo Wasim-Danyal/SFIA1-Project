@@ -145,4 +145,4 @@ class TestRates(TestBase):
 				),
 				follow_redirects=True
 			)
-			self.assertIn(b'4.567', response.data)
+			self.assertIn(b'1.234', response.data)
