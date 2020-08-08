@@ -64,10 +64,26 @@ class TestViews(TestBase):
 		response = self.client.get(url_for('about'))
 		self.assertEqual(response.status_code, 200)
 		
-	def test_account_view(self):
+	def test_convert_view(self):
 		self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
 		response = self.client.get('/convert')
 		self.assertIn(b'Forex Rates', response.data)
+
+	def test_newrate_view(self):
+		self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
+		response = self.client.get('/newrate')
+		self.assertIn(b'New Rate', response.data)
+
+	def test_accountpage_view(self):
+		self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
+		response = self.client.get('/account')
+		self.assertIn(b'Account', response.data)
+
+	def test_loggedinhome_view(self):
+		self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
+		response = self.client.get('/home')
+		self.assertIn(b'Click here to check out current rates', response.data)
+
 
 	
 
