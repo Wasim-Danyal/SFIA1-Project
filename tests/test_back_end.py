@@ -63,6 +63,13 @@ class TestViews(TestBase):
 
 		response = self.client.get(url_for('about'))
 		self.assertEqual(response.status_code, 200)
+		
+	def test_account_view(self):
+		self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
+		response = self.client.get('/convert')
+		self.assertIn(b'Convert', response.data)
+
+	
 
 class TestUserFunctionality(TestBase):
 
