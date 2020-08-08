@@ -91,7 +91,7 @@ class TestViews(TestBase):
 
 	def test_loggedinhomethird_view(self):
 		response = self.client.get('/home')
-		self.assertFalse(b'Click here to register', response.data)
+		self.assertIn(b'Click here to register', response.data)
 
 	
 
