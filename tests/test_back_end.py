@@ -67,8 +67,8 @@ class TestViews(TestBase):
 
 class TestNewRate(TestBase):
 
-    def test_add_new_rate(self):
-        with self.client:
+	def test_add_new_rate(self):
+		with self.client:
 			response = self.client.post(
 				'/newrate',
 				data=dict(
