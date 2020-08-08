@@ -64,25 +64,6 @@ class TestViews(TestBase):
 		response = self.client.get(url_for('about'))
 		self.assertEqual(response.status_code, 200)
 
-
-class TestNewRate(TestBase):
-
-	def test_add_new_rate(self):
-		with self.client:
-			response = self.client.post(
-				'/newrate',
-				data=dict(
-					base_Currency="EUR",
-					new_Currency="GBP",
-					bid_rate="1.234",
-					ask_rate="4.567"
-				),
-				follow_redirects=True
-			)
-			ratecheck = self.client.get(url_for('convert'))
-			self.assertIn(b'convert', response.data)
-			self.assertIn(b'EUR', response.data)
-
 class TestUserFunctionality(TestBase):
 
 	def test_registeruser(self):
