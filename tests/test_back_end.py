@@ -90,7 +90,6 @@ class TestViews(TestBase):
 		self.assertIn(b'Click here to logout', response.data)
 
 	def test_loggedinhomethird_view(self):
-		self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
 		response = self.client.get('/home')
 		self.assertFalse(b'Click here to register', response.data)
 
