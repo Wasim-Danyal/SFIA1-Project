@@ -139,4 +139,3 @@ class TestRates(TestBase):
 			self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
 			response = self.client.post('/newrate', data=dict(base_Currency="EUR",pair_Currency="GBP", bid_rate="1.234", ask_rate="4.567"), follow_redirects=True)
 			self.assertIn(b'1.234', response.data)
-
