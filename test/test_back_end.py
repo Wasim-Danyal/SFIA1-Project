@@ -13,7 +13,7 @@ class TestBase(TestCase):
 
 		# pass in configurations for test database
 		config_name = 'testing'
-		app.config.update(SQLALCHEMY_DATABASE_URI=getenv('mysql+pymysql://root:1234@35.246.73.168/TestBase'),
+		app.config.update(SQLALCHEMY_DATABASE_URI=getenv('TEST_DB_URI'),
 				SECRET_KEY=getenv('TEST_SECRET_KEY'),
 				WTF_CSRF_ENABLED=False,
 				DEBUG=True
