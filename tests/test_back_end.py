@@ -50,7 +50,6 @@ class TestBase(TestCase):
 		db.session.remove()
 		db.drop_all()
 	
-
 class TestViews(TestBase):
 	# testing to see if code 200 is returned upon access to url
 
@@ -93,8 +92,6 @@ class TestViews(TestBase):
 		response = self.client.get('/home')
 		self.assertIn(b'Click here to register', response.data)
 
-	
-
 class TestUserFunctionality(TestBase):
 
 	def test_registeruser(self):
@@ -132,8 +129,15 @@ class TestUserFunctionality(TestBase):
 			)
 			self.assertFalse(current_user.is_authenticated)
 		
-class TestRates(TestBase):
+class TestRates(TestBase): 
 	def test_add_new_rate(self):
 			self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
 			response = self.client.post('/newrate', data=dict(base_Currency="EUR",pair_Currency="GBP", bid_rate="1.234", ask_rate="4.567"), follow_redirects=True)
 			self.assertIn(b'1.234', response.data)
+
+class TestAccountManage(TestBase):
+	def test_delete_account(self):
+			self.client.post(url_for('login'), data=dict(email="admin@admin.com", password="admin2016"), follow_redirects=True)
+			response = self.client.post(url_for('account/delete'),
+			self.assertIn(b'Login, response.data')
+		
