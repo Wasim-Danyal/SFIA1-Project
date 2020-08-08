@@ -152,8 +152,9 @@ class TestRates(TestBase):
 			response = self.client.post(
 				'/update/1',
 				data=dict(
-					ask_rate="3.456"
+					base_currency="CZK"
 				),
 				follow_redirects=True
 			)
-			self.assertIn(b'3.456', response.date)
+			self.assertNotIn(b'EUR')
+			self.assertIn(b'CZK', response.date)
