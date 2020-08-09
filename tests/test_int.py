@@ -117,7 +117,7 @@ class TestAccountFunct(TestBase):
 		self.driver.find_element_by_xpath('//*[@id="new_currency"]').send_keys(test_new_currency)
 		self.driver.find_element_by_xpath('//*[@id="bid_rate"]').send_keys(test_bid_rate)
 		self.driver.find_element_by_xpath('//*[@id="ask_rate"]').send_keys(test_ask_rate)
-		self.driver.find_element_by_xpath('//*[@id="add"]').click()
+		self.driver.find_element_by_xpath('/html/body/form/p/input"]').click()
 		time.sleep(1)
 		assert url_for('convert') in self.driver.current_url
 
