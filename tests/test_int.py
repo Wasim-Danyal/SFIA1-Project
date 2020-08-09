@@ -111,15 +111,11 @@ class TestAccountFunct(TestBase):
 			test_admin_password)
 		self.driver.find_element_by_xpath('//*[@id="submit"]').click()
 		time.sleep(1)
-		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[4]").click()
+		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[3]").click()
 		time.sleep(1)
-		self.driver.find_element_by_xpath('//*[@id="base_currency"]').send_keys(test_base_currency)
-		self.driver.find_element_by_xpath('//*[@id="new_currency"]').send_keys(test_new_currency)
-		self.driver.find_element_by_xpath('//*[@id="bid_rate"]').send_keys(test_bid_rate)
-		self.driver.find_element_by_xpath('//*[@id="ask_rate"]').send_keys(test_ask_rate)
-		self.driver.find_element_by_xpath('//*[@id="submit"]').click()
-		time.sleep(1)
-		assert url_for('convert') in self.driver.current_url
+		
+		assert url_for('home') in self.driver.current_url		
+
 
 
 if __name__ == '__main__':
