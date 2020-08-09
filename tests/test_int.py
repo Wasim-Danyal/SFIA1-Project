@@ -49,7 +49,6 @@ class TestAccountFunct(TestBase):
 	def test_registration(self):
 		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[3]").click()
 		time.sleep(1)
-
 		self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
 		self.driver.find_element_by_xpath('//*[@id="first_name"]').send_keys(
 			test_admin_first_name)
@@ -67,7 +66,6 @@ class TestAccountFunct(TestBase):
 	def test_login(self):
 		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[3]").click()
 		time.sleep(1)
-
 		self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
 		self.driver.find_element_by_xpath('//*[@id="first_name"]').send_keys(
 			test_admin_first_name)
@@ -79,10 +77,8 @@ class TestAccountFunct(TestBase):
 			test_admin_password)
 		self.driver.find_element_by_xpath('//*[@id="submit"]').click()
 		time.sleep(1)
-
 		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[4]").click()
 		time.sleep(1)
-
 		self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
 		self.driver.find_element_by_xpath('//*[@id="password"]').send_keys(
 			test_admin_password)
