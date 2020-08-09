@@ -111,7 +111,7 @@ class TestAccountFunct(TestBase):
 			test_admin_password)
 		self.driver.find_element_by_xpath('//*[@id="submit"]').click()
 		time.sleep(1)
-		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[3]").click()
+		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[6]").click()
 		time.sleep(1)
 		
 		assert url_for('home') in self.driver.current_url		
