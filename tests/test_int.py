@@ -65,7 +65,7 @@ class TestAccountFunct(TestBase):
 		assert url_for('login') in self.driver.current_url
 
 	def test_login(self):
-		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[2]").click()
+		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[4]").click()
 		time.sleep(1)
 
 		self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
