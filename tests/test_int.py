@@ -89,7 +89,7 @@ class TestAccountFunct(TestBase):
 
 		assert url_for('home') in self.driver.current_url
 
-	def test_newrate(self):
+	def test_logout(self):
 
 		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[3]").click()
 		time.sleep(1)
