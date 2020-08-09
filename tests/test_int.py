@@ -14,8 +14,10 @@ test_admin_first_name = "admin"
 test_admin_last_name = "admin"
 test_admin_email = "admin@email.com"
 test_admin_password = "admin2020"
-
-
+test_base_currency = "USD"
+test_new_currency = "JPY"
+test_bid_rate = "1.234"
+test_ask_rate = "4.567"
 class TestBase(LiveServerTestCase):
 
 	def create_app(self):
@@ -87,12 +89,37 @@ class TestAccountFunct(TestBase):
 
 		assert url_for('home') in self.driver.current_url
 
+	def test_newrate(self):
 
-
-
-
-
-
+		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[3]").click()
+		time.sleep(1)
+		self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
+		self.driver.find_element_by_xpath('//*[@id="first_name"]').send_keys(
+			test_admin_first_name)
+		self.driver.find_element_by_xpath('//*[@id="last_name"]').send_keys(
+			test_admin_last_name)
+		self.driver.find_element_by_xpath('//*[@id="password"]').send_keys(
+			test_admin_password)
+		self.driver.find_element_by_xpath('//*[@id="confirm_password"]').send_keys(
+			test_admin_password)
+		self.driver.find_element_by_xpath('//*[@id="submit"]').click()
+		time.sleep(1)
+		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[4]").click()
+		time.sleep(1)
+		self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
+		self.driver.find_element_by_xpath('//*[@id="password"]').send_keys(
+			test_admin_password)
+		self.driver.find_element_by_xpath('//*[@id="submit"]').click()
+		time.sleep(1)
+		self.driver.find_element_by_xpath("/html/body/strong/nav/ul/a[4]").click()
+		time.sleep(1)
+		self.driver.find_element_by_xpath('//*[@id="base_currency"]').send_keys(test_base_currency)
+		self.driver.find_element_by_xpath('//*[@id="new_currency"]').send_keys(test_new_currency)
+		self.driver.find_element_by_xpath('//*[@id="bid_rate"]').send_keys(test_bid_rate)
+		self.driver.find_element_by_xpath('//*[@id="ask_rate"]').send_keys(test_ask_rate)
+		self.driver.find_element_by_xpath('//*[@id="submit"]').click()
+		time.sleep(1)
+		assert url_for('convert') in self.driver.current_url
 
 
 if __name__ == '__main__':
