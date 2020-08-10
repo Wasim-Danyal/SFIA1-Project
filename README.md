@@ -58,7 +58,6 @@ For testing the coverage report shows 75% coverage for both integration and Unit
  - Implementation of an API to regularly update with live rates for users to see instead of manually adding rates.
  - Comparison of rates from different sites.
  - Ability for users to "follow" rates and keep track on their own user page.
- - 
 
 ## Known Issues
 
