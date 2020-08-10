@@ -1,13 +1,12 @@
 # SFIA1  Forex CRUD Project
 
-**Resources**: 
+**Resources**:
+
 Presentation:
 
 Jira Board:
+
 [https://wdprojects.atlassian.net/jira/software/projects/SFIA/boards/5](https://wdprojects.atlassian.net/jira/software/projects/SFIA/boards/5)
-
-## Contents
-
 
 ## Project Brief
 
