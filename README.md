@@ -46,10 +46,12 @@ Once backlog is selected for a sprint it goes through multiple points before it 
 
 ## Testing
 For testing the coverage report shows 75% coverage for both integration and Unit testing. The coverage report is below:
+
+
 ![enter image description here](https://raw.githubusercontent.com/Wasim-Danyal/Forex-Project/docs/documentation/coverage.png)
 
 ## Risk Assessment
-
+![enter image description here](https://raw.githubusercontent.com/Wasim-Danyal/Forex-Project/docs/documentation/riskassessment.png)
 ## Future Improvements
 
  - Design overhaul to make the front end more aesthetically appealing for the user.
