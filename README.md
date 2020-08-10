@@ -2,12 +2,9 @@
 
 **Resources**:
 
-Presentation:
+Presentation:https://docs.google.com/presentation/d/1_j8YKTFPiPMVG5PN1A7zjcLkqHM93siFp9QTMU5tOUM/edit#slide=id.g8e59126c67_0_34
 
-https://docs.google.com/presentation/d/1_j8YKTFPiPMVG5PN1A7zjcLkqHM93siFp9QTMU5tOUM/edit#slide=id.g8e59126c67_0_34
-
-Jira Board:
-[https://wdprojects.atlassian.net/jira/software/projects/SFIA/boards/5](https://wdprojects.atlassian.net/jira/software/projects/SFIA/boards/5)
+Jira Board:[https://wdprojects.atlassian.net/jira/software/projects/SFIA/boards/5](https://wdprojects.atlassian.net/jira/software/projects/SFIA/boards/5)
 
 ## Project Brief
 
