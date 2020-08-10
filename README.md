@@ -33,7 +33,7 @@ The database has a one user to many rates relationship. Users can post multiple 
 ## CI Pipeline
 Pictured below is the CI Pipeline used for the integration of this project. The process starts from pushing code to github from my local machine. Via a webhook, Jenkins runs tests previously written in a test environment, if the tests are successful it deploys the application in a production environment with Gunicorn.
 
-
+![enter image description here](https://raw.githubusercontent.com/Wasim-Danyal/Forex-Project/master/documentation/CIPipeline.png)
 
 ## Project Tracking
 For project tracking, Jira was used.The reason Jira was chosen was because of the simple and understandable layout. Roadmap, Backlog and other resources are easy to keep track of and graphs are formed in real time. Below is an image of a sprint in progress:
