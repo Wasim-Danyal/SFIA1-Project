@@ -45,7 +45,7 @@ Once backlog is selected for a sprint it goes through multiple points before it 
  - *Done -* This is the final point where user stories are assigned completion.
 
 ## Testing
-For testing the coverage report shows 75% coverage for both integration and Unit testing. The coverage report is below:
+For testing the coverage report shows 75% coverage. The coverage report is below:
 
 
 ![enter image description here](https://raw.githubusercontent.com/Wasim-Danyal/Forex-Project/docs/documentation/coverage.png)
