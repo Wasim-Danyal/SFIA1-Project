@@ -8,7 +8,7 @@ Jira Board:[https://wdprojects.atlassian.net/jira/software/projects/SFIA/boards/
 
 ## Project Brief
 
-The overall project brief I have been assigned is: "To create a CRUD application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training."
+The overall project brief I have been assigned is: "To create a CRUD application with utilisation of supporting tools, methodologies and technologies that encapsulate all core modules covered during training." The original idea was to use an API for frequent updates and live tracking on rates as well as allowing users to manually update the rates. Due to the complexity at this stage, only the initial CRUD functionalities were a realistic approach to the project brief. I still wanted to continue with a currency tracker application. After looking at the project scope and comparing it with possibilities in regards to the current stage i am at with learning about the technologies. I decided the best way to tackle the CRUD scope was to design a forex rate tracker application that allows users to create, read, update and delete forex rates, as well as having a relational database between users and rates to meet the requirements for a relational database.
 
 **Additional Requirements**:
 
@@ -24,7 +24,7 @@ To achieve this my plan was to create a functioning application that allows a us
  - **READ** rates information submitted from the form.
  - **UPDATE** existing rates, the user can change values.
  - **DELETE** rates on the rates page, the rate is then deleted from the database.
-Users are able to post currency exchange rates and update them, this is viewable by other users so they can keep track of rates. The original idea was to use an API for frequent updates and live tracking on rates as well as allowing users to manually update the rates. Due to the complexity at this stage, only the initial CRUD functionalities were a realistic approach to the project brief. I still wanted to continue with a currency tracker application. After looking at the project scope and comparing it with possibilities in regards to the current stage i am at with learning about the technologies. I decided the best way to tackle the CRUD scope was to design a forex rate tracker application that allows users to create, read, update and delete forex rates, as well as having a relational database between users and rates to meet the requirements for a relational database.
+Users are able to post currency exchange rates and update them, this is viewable by other users so they can keep track of rates. 
 ## Database Structure
 ![enter image description here](https://raw.githubusercontent.com/Wasim-Danyal/Forex-Project/docs/documentation/db.png)
 
