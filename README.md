@@ -1,4 +1,4 @@
-# SFIA1  Forex CRUD Project
+# SFIA1 Project
 
 **Resources**:
 
