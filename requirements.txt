@@ -20,7 +20,7 @@ Jinja2==2.11.2
 MarkupSafe==1.0
 PyMySQL==0.8.0
 six==1.11.0
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==15.1.0
 Werkzeug==1.0.1
 WTForms==2.3.3
